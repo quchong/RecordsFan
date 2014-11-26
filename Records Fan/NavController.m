@@ -21,9 +21,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"tabbar_back"] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationBar setShadowImage:[UIImage imageNamed:@"tabbar_back"]];
+    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar_back"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationBar setShadowImage:[UIImage imageNamed:@"navbar_back"]];
     [self preferredStatusBarStyle];
+    
+    [self.navigationBar setTranslucent:YES];
+    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
     // Do any additional setup after loading the view.
 }

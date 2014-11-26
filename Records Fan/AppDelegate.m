@@ -10,6 +10,10 @@
 #import "MainTabViewController.h"
 #import "NavController.h"
 #import "RecordsViewController.h"
+#import "CollectViewController.h"
+#import "ArtistViewController.h"
+#import "MoodViewController.h"
+#import "MoreViewController.h"
 
 @interface AppDelegate ()
 
@@ -23,17 +27,25 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    //set the tabbar controller
-    RecordsViewController *rcView = [[RecordsViewController alloc] init];
+    //init the view controllers
+    RecordsViewController *reView = [[RecordsViewController alloc] init];
+    CollectViewController *clView = [[CollectViewController alloc] init];
+    ArtistViewController *arView = [[ArtistViewController alloc] init];
+    MoodViewController *moView = [[MoodViewController alloc] init];
+    MoreViewController *morView = [[MoreViewController alloc] init];
     
-    //set the root controller with a navigation controller. tempet to push the whole tabbar controller.
+    //init the navigation controllers
+    NavController *nav1 = [[NavController alloc] initWithRootViewController:reView];
+    NavController *nav2 = [[NavController alloc] initWithRootViewController:clView];
+    NavController *nav3 = [[NavController alloc] initWithRootViewController:arView];
+    NavController *nav4 = [[NavController alloc] initWithRootViewController:moView];
+    NavController *nav5 = [[NavController alloc] initWithRootViewController:morView];
+    
+    NSArray *vcs = [NSArray arrayWithObjects:nav1, nav2, nav3, nav4, nav5, nil];
+
+    //init the tabbar controller
     MainTabViewController *tabViewController = [[MainTabViewController alloc] init];
-    
-    NavController *nav = [[NavController alloc] initWithRootViewController:rcView];
-    NSArray *tabViews = [NSArray arrayWithObjects:nav, nil];
-    
-    [tabViewController setViewControllers:tabViews];
-    
+    [tabViewController setViewControllers:vcs];
     
     self.window.rootViewController = tabViewController;
     [self.window makeKeyAndVisible];

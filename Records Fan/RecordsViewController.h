@@ -13,5 +13,6 @@
 @interface RecordsViewController : UIViewController
 
 @property (strong, nonatomic) titleMenu *tMenu;
+@property (strong, nonatomic) UITableView *recordsTableView;
 
 @end

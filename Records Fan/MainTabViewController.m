@@ -16,9 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIImage *back = [UIImage imageNamed:@"tabbar_back.png"];
+    UIImage *back = [UIImage imageNamed:@"tabbar_back"];
+    UIImage *shadow = [UIImage imageNamed:@"tabbar_shadow"];
+    
     [self.tabBar setBackgroundImage:back];
-    [self.tabBar setShadowImage:back];
+    [self.tabBar setShadowImage:shadow];
+    [self.tabBar setTranslucent:YES];
+    [self.tabBar setTintColor:[UIColor colorWithRed:80.0 / 255.0 green:208.0 / 255.0 blue:192.0 / 255.0 alpha:1]];
+
      // Do any additional setup after loading the view.
 }
 
