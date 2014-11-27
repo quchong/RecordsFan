@@ -26,8 +26,9 @@
     [self preferredStatusBarStyle];
     
     [self.navigationBar setTranslucent:YES];
-    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-    
+    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
+                                                 NSFontAttributeName:[UIFont boldSystemFontOfSize:18.0]}];
+
     // Do any additional setup after loading the view.
 }
 

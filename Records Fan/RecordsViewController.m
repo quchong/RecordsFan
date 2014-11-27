@@ -34,6 +34,7 @@
         
         [self.tMenu addTarget:self action:@selector(titleMenuPressed) forControlEvents:UIControlEventTouchDown];
         [self.tMenu addTarget:self action:@selector(titleMenuReleased) forControlEvents:UIControlEventTouchUpInside];
+        [self.tMenu addTarget:self action:@selector(titleMenuReleased) forControlEvents:UIControlEventTouchUpOutside];
         
         UITabBarItem *itemRecords = [[UITabBarItem alloc] initWithTitle:@"唱片" image:[UIImage imageNamed:@"records"] selectedImage:[UIImage imageNamed:@"records_sel"]];
         [self setTabBarItem:itemRecords];
